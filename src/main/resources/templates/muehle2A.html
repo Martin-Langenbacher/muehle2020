@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<title>Brettspiel: Mühle</title>
+
+<style>
+
+  html, body, #board {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #game {
+    width: 90%;
+    height: 90%;
+  }
+
+  #board {
+    border: 3px double black;
+    box-sizing: border-box;
+    background-color: beige;
+    display: grid;
+    grid-template-columns: repeat(13, auto);
+    grid-template-rows: repeat(13, auto);
+  }
+
+  .field {
+    position: relative;
+  }
+
+  .field > div {
+    position: absolute;
+    background-color: black;
+  }
+
+  .dot {
+    border-radius: 100%;
+    left: 25%;
+    width: 50%;
+    top: 25%;
+    height: 50%;
+  }
+
+  .right {
+    width: 50%;
+    left: 50%;
+    top: 40%;
+    height: 20%;
+  }
+
+  .down {
+    width: 20%;
+    left: 40%;
+    top: 50%;
+    height: 50%;
+  }
+
+  .left {
+    width: 50%;
+    top: 40%;
+    height: 20%;
+  }
+
+  .up {
+    width: 20%;
+    left: 40%;
+    height: 50%;
+  }
+
+</style>
+
+<div id="game">
+  <div id="board">
+
+    <!-- 1. board line -->
+    <div class="field">
+      <div class="dot"></div>
+      <div class="right"></div>
+      <div class="down"></div>
+    </div>
+    <div class="field">
+      <div class="right"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field">
+      <div class="right"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field">
+      <div class="right"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field">
+      <div class="right"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field">
+      <div class="right"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field">
+      <div class="dot"></div>
+      <div class="right"></div>
+      <div class="down"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field">
+      <div class="right"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field">
+      <div class="right"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field">
+      <div class="right"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field">
+      <div class="right"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field">
+      <div class="right"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field">
+      <div class="dot"></div>
+      <div class="down"></div>
+      <div class="left"></div>
+    </div>
+
+    <!-- 2. board line -->
+    <div class="field">
+      <div class="down"></div>
+      <div class="up"></div>
+    </div>
+    <div class="field"></div>
+    <div class="field"></div>
+    <div class="field"></div>
+    <div class="field"></div>
+    <div class="field"></div>
+    <div class="field">
+      <div class="down"></div>
+      <div class="up"></div>
+    </div>
+    <div class="field"></div>
+    <div class="field"></div>
+    <div class="field"></div>
+    <div class="field"></div>
+    <div class="field"></div>
+    <div class="field">
+      <div class="down"></div>
+      <div class="up"></div>
+    </div>
+
+    <!-- 3. board line -->
+    <div class="field">
+      <div class="down"></div>
+      <div class="up"></div>
+    </div>
+    <div class="field"></div>
+    <div class="field">
+      <div class="dot"></div>
+      <div class="right"></div>
+      <div class="down"></div>
+    </div>
+    <div class="field">
+      <div class="right"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field">
+      <div class="right"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field">
+      <div class="right"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field">
+      <div class="dot"></div>
+      <div class="right"></div>
+      <div class="down"></div>
+      <div class="left"></div>
+      <div class="up"></div>
+    </div>
+    <div class="field">
+      <div class="right"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field">
+      <div class="right"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field">
+      <div class="right"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field">
+      <div class="dot"></div>
+      <div class="down"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field"></div>
+    <div class="field">
+      <div class="down"></div>
+      <div class="up"></div>
+    </div>
+
+    <!-- 4. board line -->
+    <div class="field">
+      <div class="down"></div>
+      <div class="up"></div>
+    </div>
+    <div class="field"></div>
+    <div class="field">
+      <div class="down"></div>
+      <div class="up"></div>
+    </div>
+    <div class="field"></div>
+    <div class="field"></div>
+    <div class="field"></div>
+    <div class="field">
+      <div class="down"></div>
+      <div class="up"></div>
+    </div>
+    <div class="field"></div>
+    <div class="field"></div>
+    <div class="field"></div>
+    <div class="field">
+      <div class="down"></div>
+      <div class="up"></div>
+    </div>
+    <div class="field"></div>
+    <div class="field">
+      <div class="down"></div>
+      <div class="up"></div>
+    </div>
+
+    <!-- 5. board line -->
+    <div class="field">
+      <div class="down"></div>
+      <div class="up"></div>
+    </div>
+    <div class="field"></div>
+    <div class="field">
+      <div class="down"></div>
+      <div class="up"></div>
+    </div>
+    <div class="field"></div>
+    <div class="field">
+      <div class="dot"></div>
+      <div class="right"></div>
+      <div class="down"></div>
+    </div>
+    <div class="field">
+      <div class="right"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field">
+      <div class="dot"></div>
+      <div class="right"></div>
+      <div class="left"></div>
+      <div class="up"></div>
+    </div>
+    <div class="field">
+      <div class="right"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field">
+      <div class="dot"></div>
+      <div class="down"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field"></div>
+    <div class="field">
+      <div class="down"></div>
+      <div class="up"></div>
+    </div>
+    <div class="field"></div>
+    <div class="field">
+      <div class="down"></div>
+      <div class="up"></div>
+    </div>
+
+    <!-- 6. board line -->
+    <div class="field">
+      <div class="down"></div>
+      <div class="up"></div>
+    </div>
+    <div class="field"></div>
+    <div class="field">
+      <div class="down"></div>
+      <div class="up"></div>
+    </div>
+    <div class="field"></div>
+    <div class="field">
+      <div class="down"></div>
+      <div class="up"></div>
+    </div>
+    <div class="field"></div>
+    <div class="field"></div>
+    <div class="field"></div>
+    <div class="field">
+      <div class="down"></div>
+      <div class="up"></div>
+    </div>
+    <div class="field"></div>
+    <div class="field">
+      <div class="down"></div>
+      <div class="up"></div>
+    </div>
+    <div class="field"></div>
+    <div class="field">
+      <div class="down"></div>
+      <div class="up"></div>
+    </div>
+
+    <!-- 7. board line -->
+    <div class="field">
+      <div class="dot"></div>
+      <div class="right"></div>
+      <div class="down"></div>
+      <div class="up"></div>
+    </div>
+    <div class="field">
+      <div class="right"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field">
+      <div class="dot"></div>
+      <div class="right"></div>
+      <div class="down"></div>
+      <div class="left"></div>
+      <div class="up"></div>
+    </div>
+    <div class="field">
+      <div class="right"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field">
+      <div class="dot"></div>
+      <div class="down"></div>
+      <div class="left"></div>
+      <div class="up"></div>
+    </div>
+    <div class="field"></div>
+    <div class="field"></div>
+    <div class="field"></div>
+    <div class="field">
+      <div class="dot"></div>
+      <div class="right"></div>
+      <div class="down"></div>
+      <div class="up"></div>
+    </div>
+    <div class="field">
+      <div class="right"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field">
+      <div class="dot"></div>
+      <div class="right"></div>
+      <div class="down"></div>
+      <div class="left"></div>
+      <div class="up"></div>
+    </div>
+    <div class="field">
+      <div class="right"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field">
+      <div class="dot"></div>
+      <div class="down"></div>
+      <div class="left"></div>
+      <div class="up"></div>
+    </div>
+
+    <!-- 8. board line -->
+    <div class="field">
+      <div class="down"></div>
+      <div class="up"></div>
+    </div>
+    <div class="field"></div>
+    <div class="field">
+      <div class="down"></div>
+      <div class="up"></div>
+    </div>
+    <div class="field"></div>
+    <div class="field">
+      <div class="down"></div>
+      <div class="up"></div>
+    </div>
+    <div class="field"></div>
+    <div class="field"></div>
+    <div class="field"></div>
+    <div class="field">
+      <div class="down"></div>
+      <div class="up"></div>
+    </div>
+    <div class="field"></div>
+    <div class="field">
+      <div class="down"></div>
+      <div class="up"></div>
+    </div>
+    <div class="field"></div>
+    <div class="field">
+      <div class="down"></div>
+      <div class="up"></div>
+    </div>
+
+    <!-- 9. board line -->
+    <div class="field">
+      <div class="down"></div>
+      <div class="up"></div>
+    </div>
+    <div class="field"></div>
+    <div class="field">
+      <div class="down"></div>
+      <div class="up"></div>
+    </div>
+    <div class="field"></div>
+    <div class="field">
+      <div class="dot"></div>
+      <div class="right"></div>
+      <div class="up"></div>
+    </div>
+    <div class="field">
+      <div class="right"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field">
+      <div class="dot"></div>
+      <div class="right"></div>
+      <div class="down"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field">
+      <div class="right"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field">
+      <div class="dot"></div>
+      <div class="left"></div>
+      <div class="up"></div>
+    </div>
+    <div class="field"></div>
+    <div class="field">
+      <div class="down"></div>
+      <div class="up"></div>
+    </div>
+    <div class="field"></div>
+    <div class="field">
+      <div class="down"></div>
+      <div class="up"></div>
+    </div>
+
+    <!-- 10. board line -->
+    <div class="field">
+      <div class="down"></div>
+      <div class="up"></div>
+    </div>
+    <div class="field"></div>
+    <div class="field">
+      <div class="down"></div>
+      <div class="up"></div>
+    </div>
+    <div class="field"></div>
+    <div class="field"></div>
+    <div class="field"></div>
+    <div class="field">
+      <div class="down"></div>
+      <div class="up"></div>
+    </div>
+    <div class="field"></div>
+    <div class="field"></div>
+    <div class="field"></div>
+    <div class="field">
+      <div class="down"></div>
+      <div class="up"></div>
+    </div>
+    <div class="field"></div>
+    <div class="field">
+      <div class="down"></div>
+      <div class="up"></div>
+    </div>
+
+    <!-- 11. board line -->
+    <div class="field">
+      <div class="down"></div>
+      <div class="up"></div>
+    </div>
+    <div class="field"></div>
+    <div class="field">
+      <div class="dot"></div>
+      <div class="up"></div>
+      <div class="right"></div>
+    </div>
+    <div class="field">
+      <div class="right"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field">
+      <div class="right"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field">
+      <div class="right"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field">
+      <div class="dot"></div>
+      <div class="right"></div>
+      <div class="down"></div>
+      <div class="left"></div>
+      <div class="up"></div>
+    </div>
+    <div class="field">
+      <div class="right"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field">
+      <div class="right"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field">
+      <div class="right"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field">
+      <div class="dot"></div>
+      <div class="left"></div>
+      <div class="up"></div>
+    </div>
+    <div class="field"></div>
+    <div class="field">
+      <div class="down"></div>
+      <div class="up"></div>
+    </div>
+
+    <!-- 12. board line -->
+    <div class="field">
+      <div class="down"></div>
+      <div class="up"></div>
+    </div>
+    <div class="field"></div>
+    <div class="field"></div>
+    <div class="field"></div>
+    <div class="field"></div>
+    <div class="field"></div>
+    <div class="field">
+      <div class="down"></div>
+      <div class="up"></div>
+    </div>
+    <div class="field"></div>
+    <div class="field"></div>
+    <div class="field"></div>
+    <div class="field"></div>
+    <div class="field"></div>
+    <div class="field">
+      <div class="down"></div>
+      <div class="up"></div>
+    </div>
+
+    <!-- 13. board line -->
+    <div class="field">
+      <div class="dot"></div>
+      <div class="right"></div>
+      <div class="up"></div>
+    </div>
+    <div class="field">
+      <div class="right"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field">
+      <div class="right"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field">
+      <div class="right"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field">
+      <div class="right"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field">
+      <div class="right"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field">
+      <div class="dot"></div>
+      <div class="right"></div>
+      <div class="left"></div>
+      <div class="up"></div>
+    </div>
+    <div class="field">
+      <div class="right"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field">
+      <div class="right"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field">
+      <div class="right"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field">
+      <div class="right"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field">
+      <div class="right"></div>
+      <div class="left"></div>
+    </div>
+    <div class="field">
+      <div class="dot"></div>
+      <div class="left"></div>
+      <div class="up"></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spieleauswahl</title>
+</head>
+<body>
+<h1>Bitte wählen Sie ein Spiel: </h1>
+<a href="/tetris">Tetris</a>
+<br>
+<br>
+<a href="/muehle">Mühle</a>
+<br>
+<a href="/muehle2">Mühle 2</a>
+<br>
+<br>
+<a href="/pong">Pong</a>
+<br>
+<a href="/motorbike">Motorrad</a>
+
+
+
+<p th:if="${message}" th:text="${message}">Error Message</p>
+
+<br><br>
+</body>
+</html>
+

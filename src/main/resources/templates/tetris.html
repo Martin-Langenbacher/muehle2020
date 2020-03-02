@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head th:fragment="head">
+<title>Tetris-Start</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="/style.css">
+<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+  integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+  integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+
+
+
+
+<body>
+  <h1>Tetris: Bitte drücken Sie den Knopf:</h1>
+  <a href="/playtetris" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Starte Tetris</a>
+  <br>
+  <br>
+
+  <h2>Steuerung:</h2>
+  <a>Q: Links-Drehen</a>  <br>
+  <a>W: Rechts-Drehen</a><br>
+  <a></a><br>
+  <a>Pfeil-Links: Teile bewegen sich nach links</a><br>
+  <a>Preil-Rechts: Teile bewegen sich nach rechts</a><br>
+  <a>Pfeil-Unten: Teile bewegen sich schneller nach unten</a><br>
+
+  <p th:if="${message}" th:text="${message}">Error Message</p>
+
+  <br>
+  <br>
+</body>
+</html>
+
