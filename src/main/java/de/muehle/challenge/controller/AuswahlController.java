@@ -31,7 +31,7 @@ public class AuswahlController {
 	
 	
 	@GetMapping({"/playtetris"})
-	public String playTetris (Model model) {
+	public String playTetris () {
 
 		return "playtetris";
 	}

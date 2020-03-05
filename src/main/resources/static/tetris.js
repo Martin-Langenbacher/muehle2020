@@ -96,7 +96,7 @@ function draw() {
   drawMatrix(player.matrix, player.pos);
 }
 
-function drawMatrix(matrix,btn btn-outline-warning offset) {
+function drawMatrix(matrix, offset) {
   matrix.forEach((row, y) => {
     row.forEach((value, x) => {
       if (value !== 0) {
